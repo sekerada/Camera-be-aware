@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Pozor_kamera_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="134" height="21.5" alignment="left" id="v06-el-rzf">
+                            <items>
+                                <label width="136" height="19.5" alignment="left" textAlignment="center" numberOfLines="0" id="ecd-Pl-vY9"/>
+                            </items>
+                        </group>
+                        <table alignment="left" verticalAlignment="center" id="PGe-qH-buY">
+                            <items>
+                                <tableRow identifier="CameraRowIdentifier" id="5kL-uI-dyG" customClass="CameraRow" customModule="Pozor_kamera_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="117" alignment="left" layout="vertical" id="3dW-vC-axt">
+                                        <items>
+                                            <group width="128" height="64" alignment="left" layout="vertical" id="Sbn-wx-Umj">
+                                                <items>
+                                                    <label width="131" height="55.5" alignment="left" text="Label1" textAlignment="center" numberOfLines="0" id="Acf-yA-rIf"/>
+                                                    <separator alignment="left" id="SUr-p8-7Na"/>
+                                                </items>
+                                            </group>
+                                            <group width="132" height="49" alignment="left" id="mNh-he-cLa">
+                                                <items>
+                                                    <imageView width="30" height="30" alignment="left" id="1lf-vf-f5S"/>
+                                                    <label width="94.5" height="60" alignment="left" text="Label2" textAlignment="center" numberOfLines="0" id="iq8-0X-2SJ"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="cameraRowDetailTextLabel" destination="iq8-0X-2SJ" id="gM1-d3-b0l"/>
+                                        <outlet property="cameraRowImage" destination="1lf-vf-f5S" id="2Rr-mF-LPh"/>
+                                        <outlet property="cameraRowTextLabel" destination="Acf-yA-rIf" id="Guz-wp-Glr"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="informationLabel" destination="ecd-Pl-vY9" id="7Fj-kE-hnO"/>
+                        <outlet property="table" destination="PGe-qH-buY" id="diu-u9-tbh"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-185" y="602"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="InterfaceController" customModule="Pozor_kamera_WatchKit_Extension">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="228" y="717"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Pozor_kamera_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+</document>
